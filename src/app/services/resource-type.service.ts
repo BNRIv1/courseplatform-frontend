@@ -1,7 +1,6 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Resource} from "../interfaces/Resource";
 import {ResourceType} from "../interfaces/ResourceType";
 
 @Injectable({

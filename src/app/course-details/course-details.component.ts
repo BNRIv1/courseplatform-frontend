@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, RouterLink} from "@angular/router";
-import {Observable, switchMap} from "rxjs";
+import {Observable} from "rxjs";
 import {LessonService} from "../services/lesson.service";
 import {Lesson} from "../interfaces/Lesson";
 import {CdkAccordionModule} from "@angular/cdk/accordion";
