@@ -1,0 +1,28 @@
+<div class="container">
+  <form [formGroup]="courseForm" (ngSubmit)="submit()" id="addForm" class="d-flex flex-column mx-3 my-1">
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" class="form-control" id="title" formControlName="title">
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <input type="text" class="form-control" id="description" formControlName="description">
+    </div>
+    <div class="mb-3">
+      <label for="dateCreated" class="form-label">Date Created</label>
+      <input type="date" class="form-control" id="dateCreated" formControlName="dateCreated">
+    </div>
+    <label for="category" class="form-label">Category</label>
+    <select class="form-select mb-3" formControlName="categoryId" id="category">
+      <option *ngFor="let category of categories$ | async" value="{{category.id}}">{{category.title}}</option>
+    </select>
+    <label for="teacher" class="form-label">Teacher</label>
+    <select class="form-select" formControlName="teacherId" id="teacher">
+      <option *ngFor="let teacher of teachers$ | async" value="{{teacher.id}}">{{teacher.firstName}} {{teacher.lastName}}</option>
+    </select>
+    <button type="submit" class="btn btn-primary mt-3">Add Course</button>
+  </form>
+</div>
+
+
+

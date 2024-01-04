@@ -1,0 +1,19 @@
+<div class="container">
+  <form [formGroup]="resourceForm" (ngSubmit)="submit()" id="addForm" class="d-flex flex-column mx-3 my-1">
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" class="form-control" id="title" formControlName="title">
+    </div>
+    <div class="mb-3">
+      <label for="resourcePath" class="form-label">Resource Path</label>
+      <input type="text" class="form-control" id="resourcePath" formControlName="resourcePath">
+    </div>
+    <select class="form-select mt-2" formControlName="resourceTypeId">
+      <option *ngFor="let resourceType of resourceTypes$ | async" value="{{resourceType.id}}">{{resourceType.name}}</option>
+    </select>
+    <button type="submit" class="btn btn-primary mt-3">Add Resource</button>
+  </form>
+</div>
+
+
+

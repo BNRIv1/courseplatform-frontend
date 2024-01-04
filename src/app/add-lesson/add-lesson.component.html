@@ -1,0 +1,13 @@
+<div class="container">
+  <form [formGroup]="lessonForm" (ngSubmit)="submit()" id="addForm" class="d-flex flex-column mx-3 my-1">
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" class="form-control" id="title" formControlName="title">
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <input type="text" class="form-control" id="description" formControlName="description">
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Add Lesson</button>
+  </form>
+</div>

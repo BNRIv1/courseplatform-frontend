@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row" *ngFor="let lesson of lessons$ | async">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{lesson.title}}</h5>
+        <p class="card-text">{{lesson.description}}</p>
+        <ul class="list-group">
+          <lesson-resources [lessonId]="lesson.id"></lesson-resources>
+          <button class="btn btn-outline-secondary mt-2" routerLink="/lessons/resources/{{lesson.id}}/add">Add Resource</button>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-secondary w-100 mt-2" routerLink="/courses/lessons/{{courseId}}/add">Add Lesson</button>
+</div>

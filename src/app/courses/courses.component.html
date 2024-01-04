@@ -1,0 +1,29 @@
+
+<div class="container">
+  <button class="btn btn-outline-secondary" routerLink="/courses/add">Add Course</button>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Teacher First Name</th>
+      <th>Teacher Last Name</th>
+      <th>Category</th>
+      <th>Rating</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let course of courses$ | async">
+      <td>{{course.id}}</td>
+      <td><a routerLink="/courses/lessons/{{course.id}}">{{course.title}}</a></td>
+      <td>{{course.description}}</td>
+      <td>{{course.firstName}}</td>
+      <td>{{course.lastName}}</td>
+      <td>{{course.category}}</td>
+      <td>{{course.review | number: '1.0-1'}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
